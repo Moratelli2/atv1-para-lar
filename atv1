@@ -1,0 +1,22 @@
+const int Length = 10;
+
+Console.WriteLine("Insira o nome e peso de {0} animas: \n\n", Length);
+
+string minName = string.Empty;
+float minWeight = float.MaxValue;
+
+for (int i = 0; i < Length; i++)
+{
+    Console.Write("Insira o nome do {0}º animal : ", i + 1);
+    string curName = Console.ReadLine();
+    Console.Write("Insira o peso do {0}º animal: ", i + 1);
+    float curWeight = float.Parse(Console.ReadLine());
+    if (curWeight < minWeight)
+    {
+        minName = curName;
+        minWeight = curWeight;
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine("O animal menos pesado é o {0} com {1}Kg", minName, minWeight);
